@@ -177,8 +177,8 @@ export default function SettingsScreen() {
 
       const salesSheet = [
         [
-          { value: "তারিখ", ...bold },
           { value: "পণ্য", ...bold },
+          { value: "তারিখ", ...bold },
           { value: "পরিমাণ", ...bold },
           { value: "একক মূল্য", ...bold },
           { value: "ক্রয় মূল্য", ...bold },
@@ -190,8 +190,8 @@ export default function SettingsScreen() {
         ...(data.sales ?? []).map((s) => {
           const d = new Date(s.date);
           return [
-            { value: isNaN(d.getTime()) ? s.date : d.toISOString().slice(0, 10) },
             { value: s.pname ?? "" },
+            { value: isNaN(d.getTime()) ? s.date : d.toISOString().slice(0, 10) },
             { value: Number(s.qty) || 0 },
             { value: Number(s.price) || 0 },
             { value: Number(s.buy) || 0 },
