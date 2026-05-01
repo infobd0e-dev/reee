@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "FabricGhar",
+    "slug": "fabricghar",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "fabricghar",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f0f13"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.fabricghar.app"
+    },
+    "android": {
+      "package": "com.fabricghar.app",
+      "versionCode": 1,
+      "permissions": ["INTERNET", "USE_BIOMETRIC", "USE_FINGERPRINT"],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#0f0f13"
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://replit.com/"
+        }
+      ],
+      "expo-font",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "FabricGhar আপনার দোকানের তথ্য সুরক্ষিত রাখতে Face ID ব্যবহার করে।"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "REPLACE_AFTER_RUNNING_EAS_INIT"
+      }
+    }
+  }
+}
