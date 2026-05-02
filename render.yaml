@@ -2,7 +2,6 @@ services:
   - type: web
     name: fabricghar-api
     runtime: node
-    plan: free
     buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @workspace/api-server run build
     startCommand: node --enable-source-maps artifacts/api-server/dist/index.mjs
     healthCheckPath: /api/healthz
@@ -15,7 +14,6 @@ services:
   - type: web
     name: fabricghar-app
     runtime: static
-    plan: free
     buildCommand: corepack enable && pnpm install --frozen-lockfile && EXPO_PUBLIC_DOMAIN=$EXPO_PUBLIC_DOMAIN pnpm --filter @workspace/mobile run build:web
     staticPublishPath: artifacts/mobile/dist
     envVars:
