@@ -29,20 +29,19 @@ SplashScreen.preventAutoHideAsync().catch(() => {});
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 60_000,
+      staleTime: 10_000,
       gcTime: 5 * 60_000,
       retry: 1,
-      refetchOnWindowFocus: false,
+      refetchOnWindowFocus: true,
       refetchOnReconnect: true,
-      refetchOnMount: false,
+      refetchOnMount: true,
+      refetchInterval: 10_000,
     },
   },
 });
 
 function onAppStateChange(status: AppStateStatus) {
-  if (Platform.OS !== "web") {
-    focusManager.setFocused(status === "active");
-  }
+  focusManager.setFocused(status === "active");
 }
 
 function RootLayoutNav() {
