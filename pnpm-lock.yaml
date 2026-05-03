@@ -112,6 +112,9 @@ importers:
       pino-http:
         specifier: ^10
         version: 10.5.0
+      serverless-http:
+        specifier: ^3.2.0
+        version: 3.2.0
     devDependencies:
       '@types/bcryptjs':
         specifier: ^3.0.0
@@ -5518,6 +5521,10 @@ packages:
 
   server-only@0.0.1:
     resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+
+  serverless-http@3.2.0:
+    resolution: {integrity: sha512-QvSyZXljRLIGqwcJ4xsKJXwkZnAVkse1OajepxfjkBXV0BMvRS5R546Z4kCBI8IygDzkQY0foNPC/rnipaE9pQ==}
+    engines: {node: '>=12.0'}
 
   setimmediate@1.0.5:
     resolution: {integrity: sha512-MATJdZp8sLqDl/68LfQmbP8zKPLQNV6BIZoIgrscFDQ+RsvK/BxeDQOgyxKKoh0y/8h3BqVFnCqQ/gd+reiIXA==}
@@ -12125,6 +12132,8 @@ snapshots:
       - supports-color
 
   server-only@0.0.1: {}
+
+  serverless-http@3.2.0: {}
 
   setimmediate@1.0.5: {}
 

@@ -22,7 +22,13 @@ import { AppLockProvider, useAppLock } from "@/context/AppLockContext";
 import { ShopProvider, useShop } from "@/context/ShopContext";
 import { ToastProvider } from "@/context/ToastContext";
 
-setBaseUrl(`https://${process.env.EXPO_PUBLIC_DOMAIN}`);
+setBaseUrl(
+  process.env.EXPO_PUBLIC_DOMAIN
+    ? `https://${process.env.EXPO_PUBLIC_DOMAIN}`
+    : typeof window !== "undefined"
+      ? window.location.origin
+      : "",
+);
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 

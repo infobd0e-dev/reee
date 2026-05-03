@@ -1,0 +1,22 @@
+[build]
+  command = "corepack enable && pnpm install --frozen-lockfile && pnpm --filter @workspace/mobile run build:web"
+  publish = "artifacts/mobile/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_OPTIONS = "--max-old-space-size=4096"
+
+[functions]
+  node_bundler = "esbuild"
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
